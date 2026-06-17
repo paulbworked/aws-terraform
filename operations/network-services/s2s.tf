@@ -20,7 +20,7 @@ resource "aws_vpn_connection" "vpn_azure_prod_ew1" {
   type                = "ipsec.1"
   enable_acceleration = false
 
-  tunnel1_inside_cidr         = "169.254.21.0/30"
+  tunnel1_inside_cidr         = "0.0.0.0/0"
   tunnel1_dpd_timeout_seconds = 45
   tunnel1_dpd_timeout_action  = "restart"
 
@@ -33,7 +33,7 @@ resource "aws_vpn_connection" "vpn_azure_prod_ew1" {
   tunnel1_phase2_dh_group_numbers      = [20]
   tunnel1_phase2_lifetime_seconds      = 3600
 
-  tunnel2_inside_cidr         = "169.254.22.0/30"
+  tunnel2_inside_cidr         = "0.0.0.0/0"
   tunnel2_dpd_timeout_seconds = 45
   tunnel2_dpd_timeout_action  = "restart"
 
