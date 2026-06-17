@@ -55,7 +55,7 @@ resource "aws_ec2_transit_gateway_route_table" "tgw_hub_prod_ew1" {
 # ─────────────────────────────────────────────────────────────────────────────
 
 resource "aws_vpc" "vpc_hub_prod_ew1" {
-  cidr_block           = "10.50.0.0/16"
+  cidr_block           = "0.0.0.0/0"
   enable_dns_support   = true
   enable_dns_hostnames = true
 
@@ -70,7 +70,7 @@ resource "aws_vpc" "vpc_hub_prod_ew1" {
 
 resource "aws_subnet" "snet_nat_prod_ew1_a" {
   vpc_id                  = aws_vpc.vpc_hub_prod_ew1.id
-  cidr_block              = "10.50.0.0/27"
+  cidr_block              = "0.0.0.0/0"
   availability_zone       = "eu-west-1a"
   map_public_ip_on_launch = false
 
@@ -81,7 +81,7 @@ resource "aws_subnet" "snet_nat_prod_ew1_a" {
 
 resource "aws_subnet" "snet_nat_prod_ew1_b" {
   vpc_id                  = aws_vpc.vpc_hub_prod_ew1.id
-  cidr_block              = "10.50.0.32/27"
+  cidr_block              = "0.0.0.0/0"
   availability_zone       = "eu-west-1b"
   map_public_ip_on_launch = false
 
@@ -92,7 +92,7 @@ resource "aws_subnet" "snet_nat_prod_ew1_b" {
 
 resource "aws_subnet" "snet_firewall_prod_ew1_a" {
   vpc_id                  = aws_vpc.vpc_hub_prod_ew1.id
-  cidr_block              = "10.50.0.64/28"
+  cidr_block              = "0.0.0.0/0"
   availability_zone       = "eu-west-1a"
   map_public_ip_on_launch = false
 
@@ -103,7 +103,7 @@ resource "aws_subnet" "snet_firewall_prod_ew1_a" {
 
 resource "aws_subnet" "snet_firewall_prod_ew1_b" {
   vpc_id                  = aws_vpc.vpc_hub_prod_ew1.id
-  cidr_block              = "10.50.0.80/28"
+  cidr_block              = "0.0.0.0/0"
   availability_zone       = "eu-west-1b"
   map_public_ip_on_launch = false
 
@@ -114,7 +114,7 @@ resource "aws_subnet" "snet_firewall_prod_ew1_b" {
 
 resource "aws_subnet" "snet_tgw_prod_ew1_a" {
   vpc_id                  = aws_vpc.vpc_hub_prod_ew1.id
-  cidr_block              = "10.50.0.96/28"
+  cidr_block              = "0.0.0.0/0"
   availability_zone       = "eu-west-1a"
   map_public_ip_on_launch = false
 
@@ -125,7 +125,7 @@ resource "aws_subnet" "snet_tgw_prod_ew1_a" {
 
 resource "aws_subnet" "snet_tgw_prod_ew1_b" {
   vpc_id                  = aws_vpc.vpc_hub_prod_ew1.id
-  cidr_block              = "10.50.0.112/28"
+  cidr_block              = "0.0.0.0/0"
   availability_zone       = "eu-west-1b"
   map_public_ip_on_launch = false
 
@@ -136,7 +136,7 @@ resource "aws_subnet" "snet_tgw_prod_ew1_b" {
 
 resource "aws_subnet" "snet_pep_prod_ew1_a" {
   vpc_id                  = aws_vpc.vpc_hub_prod_ew1.id
-  cidr_block              = "10.50.0.128/26"
+  cidr_block              =  "0.0.0.0/0"
   availability_zone       = "eu-west-1a"
   map_public_ip_on_launch = false
 
@@ -147,7 +147,7 @@ resource "aws_subnet" "snet_pep_prod_ew1_a" {
 
 resource "aws_subnet" "snet_pep_prod_ew1_b" {
   vpc_id                  = aws_vpc.vpc_hub_prod_ew1.id
-  cidr_block              = "10.50.0.192/26"
+  cidr_block              = "0.0.0.0/0"
   availability_zone       = "eu-west-1b"
   map_public_ip_on_launch = false
 
