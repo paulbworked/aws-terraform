@@ -45,7 +45,7 @@ resource "aws_route_table" "rt_nat_prod_ew1_b" {
   # The [0] and [1] index is AZ-specific — AZ-a's TGW route table points to the AZ-a firewall endpoint, AZ-b's to AZ-b. 
   # This is what makes the per-AZ symmetric routing work.
   route {
-    cidr_block      = "10.0.0.0/8"
+    cidr_block      = "0.0.0.0/0"
     vpc_endpoint_id = tolist(aws_networkfirewall_firewall.nfw_prod_ew1.firewall_status[0].sync_states)[0].attachment[0].endpoint_id
   }
 
@@ -82,7 +82,7 @@ resource "aws_route_table" "rt_firewall_prod_ew1_a" {
   }
 
   route {
-    cidr_block         = "10.0.0.0/8"
+    cidr_block         = "0.0.0.0/0"
     transit_gateway_id = aws_ec2_transit_gateway.tgw_prod_ew1.id
   }
 
@@ -101,7 +101,7 @@ resource "aws_route_table" "rt_firewall_prod_ew1_b" {
   }
 
   route {
-    cidr_block         = "10.0.0.0/8"
+    cidr_block         = "0.0.0.0/0"
     transit_gateway_id = aws_ec2_transit_gateway.tgw_prod_ew1.id
   }
 
